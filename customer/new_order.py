@@ -32,7 +32,7 @@ DEFAULT_PRICES = {
     "a3_black_white": 5.00,
     "a3_color": 12.00,
     "handling_fee": 2.50,
-    "delivery_fee": 0.00,
+    "delivery_fee": 2.50,
     "pickup_fee": 0.00,
 }
 
