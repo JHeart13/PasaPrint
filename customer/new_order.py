@@ -21,16 +21,14 @@ MAX_FILES = 20
 MAX_FILE_SIZE_MB = 20
 
 DEFAULT_PRICES = {
-    "a4_black_white": 2.00,
-    "a4_color": 4.00,
-    "letter_black_white": 2.00,
-    "letter_color": 4.00,
-    "legal_black_white": 3.00,
-    "legal_color": 6.00,
+    "short_black_white": 2.00,
+    "short_color": 4.00,
     "long_black_white": 3.00,
     "long_color": 5.00,
-    "a3_black_white": 5.00,
-    "a3_color": 10.00,
+    "a4_black_white": 2.00,
+    "a4_color": 4.00,
+    "a3_black_white": 3.00,
+    "a3_color": 5.00,
     "handling_fee": 2.50,
     "delivery_fee": 2.50,
     "pickup_fee": 0.00,
@@ -496,7 +494,7 @@ def render_new_order_page(user):
         with paper_col:
             paper_size = st.selectbox(
                 "Paper Size",
-                ["A4", "Letter", "Legal", "Long", "A3"],
+                ["Short", "Long", "A4", "A3"],
                 key="pp_order_paper",
             )
 
@@ -583,10 +581,9 @@ def render_new_order_page(user):
 
     # Step 4: Calculate the estimate
     paper_price_keys = {
-        "A4": "a4",
-        "Letter": "letter",
-        "Legal": "legal",
+        "Short": "short",
         "Long": "long",
+        "A4": "a4",
         "A3": "a3",
     }
     paper_key = paper_price_keys[paper_size]
